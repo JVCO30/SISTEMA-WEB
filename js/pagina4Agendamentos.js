@@ -4,13 +4,16 @@ const session = localStorage.getItem("session");
 let data = {
     agendamentos: []
 };
-let agendados ={
-    todosagendamentos: []
-}
+let usuarios = {
+    agendamentos: []
+};
 
+usuarios = JSON.parse(localStorage.getItem("usuarios")) || [] ;
+    console.log(usuarios);
 document.getElementById("button-logout").addEventListener("click", logout);
-checkLogged();
 
+checkLogged();
+console.log(JSON.parse(localStorage.getItem("usuarios")));
 document.getElementById("modal-agendamento").addEventListener("submit", function (e) {
     e.preventDefault;
     const hora = document.getElementById("hora-modal").value;
@@ -21,15 +24,11 @@ document.getElementById("modal-agendamento").addEventListener("submit", function
     data.agendamentos.unshift({
         hora: hora , laboratorio: laboratorio, aula: aula, date: date
     });
-    agendados.todosagendamentos.unshift({
-        hora: hora , laboratorio: laboratorio, aula: aula, date: date
-    });
+    console.log(data);
     saveData(data);
-    
     e.target.reset();
     myModal.hide();
     getMeuAgendamento();
-    saveAgendamentos(agendados);
     getTodoAgendamento();
     alert("Agendamento Adicionado");
 
@@ -37,6 +36,10 @@ document.getElementById("modal-agendamento").addEventListener("submit", function
 
 function saveData(data){
     localStorage.setItem(data.login , JSON.stringify(data));
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    usuarios.push(data);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
 function getMeuAgendamento(){
@@ -59,28 +62,29 @@ function getMeuAgendamento(){
 
 }
 
-function saveAgendamentos(agendados){
-    localStorage.setItem(agendados.todosAgendamentos , JSON.stringify(agendados) );
-}
-
 function getTodoAgendamento(){
-    const agendamento = agendados.todosagendamentos;
+    const user = usuarios;
     let agendamentoHTML = ``;
-
-    if(agendamento.length){
-        agendamento.forEach((item) =>{
-            agendamentoHTML += `
-            <tr>
-                <td>${item.date}</td>
-                <td>${item.hora}</td>
-                <td>${item.laboratorio}</td>
-                <td>${item.aula}</td>
-            </tr>
-            `;
+    console.log("usuarios", user);
+        Object.values(user).forEach((users) =>{
+            console.log("pao",users.agendamento);
+            users.agendamentos.forEach((item) =>{
+                
+                agendamentoHTML += `
+                <tr>
+                    <td>${item.date}</td>
+                    <td>${item.hora}</td>
+                    <td>${item.laboratorio}</td>
+                    <td>${item.aula}</td>
+                </tr>
+                `;
+            })
         })
-    }
-    document.getElementById("total-table").innerHTML = agendamentoHTML;
+            
+                
 
+    document.getElementById("total-table").innerHTML = agendamentoHTML;
+    console.log("final")
 }
 
 function checkLogged(){
@@ -98,8 +102,6 @@ function checkLogged(){
     if(dataUser){
         data = JSON.parse(dataUser);
     }
-    const dataTodos = localStorage.getItem(agendados);
-    agendados = JSON.parse(dataTodos);
     getMeuAgendamento();
     getTodoAgendamento();
 }

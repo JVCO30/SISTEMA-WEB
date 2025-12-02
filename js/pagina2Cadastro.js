@@ -8,8 +8,8 @@ document.getElementById("create-form").addEventListener("submit", function (e){
     const email = document.getElementById("email-cadastro").value;
     const password = document.getElementById("password-cadastro").value;
     const CPF = document.getElementById("CPF-cadastro").value;
-    const telefone = document.getElementById("password-cadastro").value;
-    const name = document.getElementById("password-cadastro").value;
+    const telefone = document.getElementById("telefone-cadastro").value;
+    const name = document.getElementById("nome-cadastro").value;
     if(email.length < 5 ){
         alert("Email invalido");
         return;
@@ -26,17 +26,17 @@ document.getElementById("create-form").addEventListener("submit", function (e){
         CPF: CPF,
         agendamentos: []
         
-    }, {
-        todosagendamentos: []
     });
 
     alert("Conta Criada");
     window.location.href = "pagina3Inicial.html";
 })
 
-function saveAccount(data , agendados){
-    localStorage.setItem(data.login, JSON.stringify(data) )
-    localStorage.setItem(agendados.todosagendamentos, JSON.stringify(agendados) )
+function saveAccount(data){
+    localStorage.setItem(data.login, JSON.stringify(data) );
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    usuarios.push(data);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
 function saveSession(data, saveSession){
