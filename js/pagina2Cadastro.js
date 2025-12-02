@@ -23,16 +23,20 @@ document.getElementById("create-form").addEventListener("submit", function (e){
         login: email,
         password: password,
         telefone: telefone,
-        CPF: CPF
+        CPF: CPF,
+        agendamentos: []
         
+    }, {
+        todosagendamentos: []
     });
 
     alert("Conta Criada");
     window.location.href = "pagina3Inicial.html";
 })
 
-function saveAccount(data){
+function saveAccount(data , agendados){
     localStorage.setItem(data.login, JSON.stringify(data) )
+    localStorage.setItem(agendados.todosagendamentos, JSON.stringify(agendados) )
 }
 
 function saveSession(data, saveSession){

@@ -131,7 +131,7 @@ body {
     box-shadow: 0 0 20px #00408033;
 }
 .table th {
-    background-color: #004080;
+    background-color: #004080 !important;
     color: #ffffff;
     font-weight: 600;
     text-align: center;
