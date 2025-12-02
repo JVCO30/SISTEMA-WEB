@@ -1,0 +1,142 @@
+/*ESTILO DO CABEÇALHO - Largura mínima que consegui deixar responsiva: 375px*/
+header {
+    width: 100%;
+    background-image: url("../Assets/img/fundo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    padding: 0;
+}
+.logo img {
+    max-width: 90%;
+    max-height: 70px;
+    height: auto; 
+    object-fit: contain;
+    display: block;
+    margin: 1%;
+    padding: 0;
+}
+.logo-zoom {
+    transition: transform 0.3s ease;
+}
+.logo-zoom:hover {
+    transform: scale(1.1);
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2%;
+    height: 100%;
+    flex-wrap: nowrap;
+}
+nav a {
+    font-size: 18px;
+    position: relative;
+}
+nav a::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    top: 36px;
+    left: 50%;
+    background-image: linear-gradient(45deg, #ffffffcc);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 2px;
+
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+
+.pesquisa, .perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pesquisa input {
+    max-width: 600px;
+}
+
+@media (max-width: 576px) {
+  .perfil-pesquisa {
+        justify-content: center !important;
+        margin-top: 1rem;
+  }
+}
+
+/*ESTILO DA PÁGINA DE RECURSOS*/
+body {
+    background-image: url("../Assets/img/inicial1.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1{
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.recurso-box {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.recurso-box p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #000000;
+    margin-bottom: 1rem;
+}
+.recurso-box span {
+    display: block;
+    font-size: larger;
+    font-weight: 900;
+    color: #004080;
+    margin-bottom: 0.5rem;
+}
+.link-recurso {
+    display: inline-block;
+    color: #004080;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    text-decoration: none;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+.link-recurso:hover {
+    color: #0066cc;
+    border-bottom-color: #0066cc;
+}
+
+
+/*ESTILO DO RODAPÉ*/
+footer {
+    border-top: 4px solid #004080;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffc107 !important;
+}

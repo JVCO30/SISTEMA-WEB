@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./css/estilo2Cadastro.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Assets/img/icon2.png" type="image/x-icon">
+</head>
+<body>
+    <!-- PARTE PRINCIPAL DO CADASTRO -->
+    <main>
+        <div class="container mb-5">
+            <div class="row flex">
+                <!-- COLUNA: Imagens e Textos -->
+                <div class="col d-none d-md-inline">
+                    <div class="title-cadastro">
+                        <h1> FAÇA SEUS <br><span>AGENDAMENTOS ONLINE</span></h1>
+                        <img src="./Assets/img/agendamento.jpg" alt="Ilustração"/>
+                        <p>
+                            Gerencie seus compromissos de forma fácil e rápida! <br>
+                            <span>Ideal para equipes que valorizam organização e eficiência.</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- COLUNA: Formulário -->
+                <div class="col">
+                    <div class="container form-cadastro">
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <img class="col d-none d-md-inline" src="./Assets/img/logo1.png" alt="image Logo">
+                                    <img class="img-mobile" src="./Assets/img/logo2.png" alt="image Logo">
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <form id="create-form">          
+                                    <h1 class="h3 mb-3 fw-normal">Insira seus dados:</h1>
+
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nome-cadastro" placeholder=" "/>
+                                        <label for="floatingInput">Nome Completo</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="CPF-cadastro" placeholder=" " pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite no formato 000.000.000-00" required/>
+                                        <label for="floatingInput">CPF</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="telefone-cadastro" placeholder=" " pattern="\(\d{2}\)\s\d{4,5}-\d{4}" title="Digite no formato (99) 99999-9999" required/>
+                                        <label for="floatingInput">Telefone</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email-cadastro" name="email" placeholder=" " required/>
+                                        <label for="floatingInput">E-mail</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="password-cadastro" placeholder=" "/>
+                                        <label for="floatingPassword">Senha</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <select id="cargo-cadastro" name="cargo" class="form-control" required>
+                                            <option value="">Selecione um Cargo</option>
+                                            <option value="gerente">Diretor(a)</option>
+                                            <option value="analista">Vice-Diretor(a)</option>
+                                            <option value="desenvolvedor">Coordernador(a) pedagógico</option>
+                                            <option value="desenvolvedor">Orientador(a) educacional</option>
+                                            <option value="designer">Supervisor(a)</option>
+                                            <option value="estagiario">Professor(a)</option>
+                                            <option value="estagiario">Secretário(a)</option>
+                                            <option value="estagiario">Administrador(a)</option>
+                                            <option value="estagiario">Bibliotecário(a)</option>
+                                            <option value="estagiario">Psicólogo(a)</option>
+                                            <option value="estagiario">Porteiro(a)</option>
+                                            <option value="estagiario">Auxiliar de limpeza</option>
+                                            <option value="estagiario">Auxiliar de serviços gerais</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- BOTÃO: Dessa forma tem que clicar na palavra para funcionar, mas é só pra facilitar sua navegação entre as páginas-->
+                                    <button id="button-cadastro" class="w-100 py-2" type="submit">Cadastre-se</button>
+                                    <p class="link">Já possu conta? <a href="pagina1Login.html">Entrar.</a></p>
+                                </form>
+                            </div>
+                            <p class="paragrafo text-center text-body-secondary">&copy;2025 equipe de agendamentos CEP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/pagina2Cadastro.js"></script>
+</body>
+</html>

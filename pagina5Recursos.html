@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEP | Recursos</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgY+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="./css/estilo5Recursos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Assets/img/icon2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <!--COLUNA 1: Nossa Logo-->
+                <div class="col-12 col-lg-3 ajuste-logo d-flex justify-content-center justify-content-md-start">
+                    <div class="logo">
+                        <a href="pagina3Inicial.html"><img src="./Assets/img/logo2.png" alt="Logo" class="logo-zoom"></a>
+                    </div>
+                </div>
+
+
+                <!--COLUNA 2: Navegação-->
+                <div class="col">
+                    <nav class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <a href="pagina3Inicial.html" class="nav-link px-2 link-light" aria-label="Ir para a página inicial">Início</a>
+                        <a href="pagina4Agendamentos.html" class="nav-link px-2 link-light" aria-label="Ir para a página agendamentos">Agendamentos</a>
+                        <a href="pagina5Recursos.html" class="nav-link px-2 link-info" aria-label="Ir para a página recursos">Recursos</a>
+                        <a href="pagina6Sobre.html" class="nav-link px-2 link-light" aria-label="Ir para a página sobre">Sobre</a>
+                    </nav>
+                </div>
+
+                
+                <!--COLUNA 3-->
+                <div class="col-12 col-sm-3 perfil-pesquisa d-flex align-items-center justify-content-end gap-3">
+                    <!--Pesquisa em telas maiores-->
+                    <div class="pesquisa d-none d-lg-flex">
+                        <form class="d-flex" role="search">
+                            <input type="search" class="form-control" placeholder="Pesquisar..." aria-label="Search"/>
+                        </form>
+                    </div>
+                    <!--Pesquisa em telas menores que só aparece com o botão-->
+                    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content p-3">
+                                <input type="search" class="form-control" placeholder="Pesquisar..." />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn d-lg-none" id="searchToggle"><i class="fas fa-search text-light"></i></button>
+                    <!--Perfil-->
+                    <div class="dropdown">
+                        <a class="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./Assets/img/temporárioPerfil.jpg" alt="Perfil" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header"> Usuário</h6></li>
+                            <li><a class="dropdown-item" href="#">👤 Meu Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">⚙️ Configurações</a></li>
+                            <li><a class="dropdown-item" href="./pagina4Agendamentos.html">📅 Meus Agendamentos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="./pagina1Login.html">🚪 Sair</a></li>
+                        </ul>
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </header>
+    <!-- PARTE DE RECURSOS -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Recursos do Sistema</h1>
+        <div class="row g-4">
+            <!-- RECURSOS DE 1 AO 7 -->
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 1 -->
+                <div class="recurso-box">
+                    <span>Agendamento Inteligente</span>
+                    <p>Organize seus horários com eficiência e evite conflitos de uso nos laboratórios.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 2 -->
+                <div class="recurso-box">
+                    <span>Interface Responsiva</span>
+                    <p>Compatível com celulares, tablets e desktops para acesso prático em qualquer lugar.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 3 -->
+                <div class="recurso-box">
+                    <span>Controle de Usuários</span>
+                    <p>Gerencie permissões e acompanhe o uso por professores, alunos e administradores.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 4 -->
+                <div class="recurso-box">
+                    <span>Histórico de Agendamentos</span>
+                    <p>Visualize registros anteriores e mantenha o controle das atividades realizadas.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 5 -->
+                <div class="recurso-box">
+                    <span>Design Personalizado</span>
+                    <p>Visual moderno com cores e fontes que refletem a identidade do sistema.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <!-- RECURSO 6 -->
+                <div class="recurso-box">
+                    <span>Notificações Automatizadas</span>
+                    <p>Receba alertas sobre agendamentos, mudanças e confirmações diretamente no sistema.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <!-- RECURSO 7 -->
+                <div class="recurso-box">
+                    <span>Integração com Calendários</span>
+                    <p>Sincronize seus agendamentos com Google Calendar ou Outlook para melhor organização.</p>
+                    <a href="#" class="link-recurso" target="_blank" data-bs-toggle="modal" data-bs-target="#modalAgendamento">&lt; Saiba mais &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAgendamento" aria-labelledby="modalAgendamentoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <h1>NÃO TEM MAIS NADA PARA SABER</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2025 equipe de agendamentos CEP - Todos os direitos reservados.</p>
+            <p class="mb-1">Desenvolvido por Anthony Mácimo, João Coelho, Sarah Agostinho, Thalys Martins e Victor Gabriel.</p>
+            <p class="mb-1">Orientação: Prof. Dyeime</p>
+            <div class="mt-3">
+                <a href="#" class="text-white me-3 text-decoration-none">Política de Privacidade</a>
+                <a href="#" class="text-white me-3 text-decoration-none">Termos de Uso</a>
+                <a href="mailto:contato@cep.edu.br" class="text-white text-decoration-none">contato@cep.edu.br</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/*ESTILO DO CABEÇALHO - Largura mínima que consegui deixar responsiva: 375px*/
+header {
+    width: 100%;
+    background-image: url("../Assets/img/fundo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    padding: 0;
+}
+.logo img {
+    max-width: 90%;
+    max-height: 70px;
+    height: auto; 
+    object-fit: contain;
+    display: block;
+    margin: 1%;
+    padding: 0;
+}
+.logo-zoom {
+    transition: transform 0.3s ease;
+}
+.logo-zoom:hover {
+    transform: scale(1.1);
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2%;
+    height: 100%;
+    flex-wrap: nowrap;
+}
+nav a {
+    font-size: 18px;
+    position: relative;
+}
+nav a::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    top: 36px;
+    left: 50%;
+    background-image: linear-gradient(45deg, #ffffffcc);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 2px;
+
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+
+.pesquisa, .perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pesquisa input {
+    max-width: 600px;
+}
+
+
+@media (max-width: 576px) {
+    .perfil-pesquisa {
+        justify-content: center !important;
+        margin-top: 1rem;
+    }
+}
+
+/*ESTILO DA PARTE DE AGENDAMENTOS*/
+body {
+    background-color: #d4d4d4;
+    font-family: 'Lucida Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.sobre h2 {
+    font-family: 'Lucida Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.btn-primary {
+    background-color: #004080;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #00264d;
+}
+
+
+@media (max-width: 768px) {
+    .responsivo-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn-agendar {
+        order: -1; /* Coloca o botão acima do título */
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/*ESTILO DAS TABELAS*/
+.table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #00408033;
+}
+.table th {
+    background-color: #004080;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+}
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+
+.badge {
+    font-size: 1em;
+    padding: 0.5em 0.75em;
+    border-radius: 0.5rem;
+}
+
+
+/*ESTILO DO MODAL DE AGENDAMENTOS*/
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 0 30px #004080;
+}
+.modal-header {
+    background-image: url("../Assets/img/fundo.jpg");
+}
+.modal-title {
+    font-weight: bold;
+}
+.modal-body label {
+    font-weight: 600;
+    color: #004080;
+}
+.modal-body input, .modal-body select {
+    border: 1px solid #004080;
+    border-radius: 5px;
+}
+.modal-body button {
+    background-color: #004080;
+    border: none;
+}
+.modal-body button:hover {
+    background-color: #00264d;
+}
+
+
+@media (max-width: 768px) {
+    .sobre h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+
+/*ESTILO DO RODAPÉ*/
+footer {
+    border-top: 4px solid #004080;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffc107 !important;
+}
